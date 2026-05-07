@@ -1,0 +1,15 @@
+# 核心 Agent 框架
+openclaw>=0.2.1
+langchain>=0.1.0
+
+# API 调用与网络通信
+openai>=1.12.0  # MiMo API 兼容 OpenAI 格式
+httpx>=0.26.0
+pydantic>=2.5.0
+
+# 向量检索与 RAG (规划中)
+chromadb>=0.4.22
+tiktoken>=0.6.0
+
+# 本地测试工具
+pytest>=8.0.0

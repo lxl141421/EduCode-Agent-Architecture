@@ -1,0 +1,23 @@
+{
+    "dataset_info": "K12 C++/Python 常见逻辑与语法错误特征库 (预研阶段提取)",
+    "cases": [
+        {
+            "id": "cpp_001",
+            "language": "C++",
+            "error_type": "Array Out of Bounds / Memory Leak",
+            "student_code": "int arr[5];\nfor(int i=1; i<=5; i++) {\n    arr[i] = i * 10;\n}",
+            "traditional_compiler_error": "Segmentation fault (core dumped)",
+            "agent_diagnosis": "数组越界。C++ 数组索引从 0 开始，长度为 5 的数组最大索引为 4。循环条件 i<=5 导致访问 arr[5]，引发内存越界。",
+            "socratic_hint": "同学，请观察你的数组 `arr` 定义的长度是多少？在 C++ 中，如果我们有 5 个抽屉，第一个抽屉的编号是 1 还是 0 呢？"
+        },
+        {
+            "id": "py_001",
+            "language": "Python",
+            "error_type": "Scope and Indentation / Logic Flaw",
+            "student_code": "def calculate_sum(n):\n    total = 0\n    for i in range(n):\n        total += i\n        return total",
+            "traditional_compiler_error": "None (Returns wrong logical result silently)",
+            "agent_diagnosis": "过早返回。return 语句被错误地缩进到了 for 循环内部，导致循环只执行一次就结束了函数。",
+            "socratic_hint": "代码没有报错，但是结果不对哦。请仔细看一下 `return total` 这行代码前面的空格。它现在属于 for 循环的一部分，这意味着循环转了几圈就会把结果交出来呢？"
+        }
+    ]
+}
